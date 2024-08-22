@@ -1,0 +1,28 @@
+{
+    "name": "book-exchange-platform",
+    "version": "1.0.0",
+    "description": "A platform for exchanging books",
+    "main": "server.js",
+    "scripts": {
+      "start": "node backend/server.js",
+      "server": "nodemon backend/server.js",
+      "client": "npm start --prefix frontend",
+      "dev": "concurrently \"npm run server\" \"npm run client\"",
+      "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    },
+    "keywords": ["book", "exchange", "mern"],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
+      "dotenv": "^10.0.0",
+      "express": "^4.17.1",
+      "jsonwebtoken": "^8.5.1",
+      "mongoose": "^6.0.12"
+    },
+    "devDependencies": {
+      "concurrently": "^6.3.0",
+      "nodemon": "^2.0.14"
+    }
+  }

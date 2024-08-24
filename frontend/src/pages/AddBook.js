@@ -8,7 +8,7 @@ const AddBook = () => {
 
   const handleSubmit = async (bookData) => {
     try {
-      await axios.post('http://localhost:5000/api/books', bookData);
+      await axios.post('https://book-exchange-iyt6.onrender.com/api/books', bookData);
       navigate('/books');
     } catch (error) {
       console.error('Error adding book:', error);

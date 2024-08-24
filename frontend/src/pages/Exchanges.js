@@ -9,7 +9,7 @@ const Exchanges = () => {
   useEffect(() => {
     const fetchExchanges = async () => {
       try {
-        const response = await axios.get('/api/exchanges');
+        const response = await axios.get('https://book-exchange-iyt6.onrender.com/api/exchanges');
         setExchanges(response.data);
       } catch (error) {
         console.error('Error fetching exchanges:', error);
@@ -20,9 +20,9 @@ const Exchanges = () => {
 
   const handleRespondToExchange = async (exchangeId, status) => {
     try {
-      await axios.put(`/api/exchanges/${exchangeId}`, { status });
+      await axios.put(`https://book-exchange-iyt6.onrender.com/api/exchanges/${exchangeId}`, { status });
       // Refresh exchanges after responding
-      const response = await axios.get('/api/exchanges');
+      const response = await axios.get('https://book-exchange-iyt6.onrender.com/api/exchanges');
       setExchanges(response.data);
     } catch (error) {
       console.error('Error responding to exchange:', error);
